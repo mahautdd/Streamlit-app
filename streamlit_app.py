@@ -8,9 +8,9 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 #Mise en place données utiles
-df=pd.read_csv("df_comptage_clean.csv.zip")
-df_prep=pd.read_csv("df_prep.csv.zip")
-df_prep2 = pd.read_csv("X_train.csv.zip")
+df=pd.read_csv("df_comptage_clean.csv.zip", compression = 'zip')
+df_prep=pd.read_csv("df_prep.csv.zip", compression = 'zip')
+df_prep2 = pd.read_csv("X_train.csv.zip", compression = 'zip')
 
 #Croisement des données par jour, heure et jour semaine afin de les réutiliser dans des graphiques
 comptage_jour = df.groupby('Date_comptage').agg({'Comptage_h': 'mean','prcp': 'mean', 'tavg':'mean'}).reset_index()

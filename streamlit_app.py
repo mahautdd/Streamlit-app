@@ -7,7 +7,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import gdown
-import joblib
 
 file_id = '11a22bhGoroqqg3ItPVlBfWzcvBGwpWsd'
 url = f'https://drive.google.com/uc?id={file_id}'
@@ -256,11 +255,11 @@ if page == pages[3] :
         if option == 'Arbre de regression après Grid Search':
             st.write('La MAE est 14.6.')
   else:
-    st.write('La MAE est 11.59')
+    st.write('La MAE est 11.59. Il s'agit du meilleur modèle !')
 
   st.markdown(''':blue[Choix des métriques ] ''')
   st.write("Score ou coefficient de détermination : pertinent dans le cas de la régression linéaire")
-  st.write("MAE : métrique la moins sensible aux outliers")
+  st.write("MAE : métrique la moins sensible aux outliers, donc la plus pertinente pour notre jeu de données.")
 
   left_co, cent_co,last_co = st.columns(3)
   with cent_co:
@@ -275,22 +274,8 @@ if page == pages[3] :
   st.write('Meilleure précision')
 
   st.subheader("Caractéristiques principales")
-
-st.image("features_imp.png", caption="Features importance pour le modèle de Random Forest")
-  #Importance des variable pour le modèle de Random Forest retenu
-  #import matplotlib.pyplot as plt
-  #import pandas as pd
- # feats = loaded_X_train
- # feat_importances = pd.DataFrame(loaded_model3.feature_importances_, index=feats.columns, columns=["Importance"])
-  #feat_importances.sort_values(by='Importance', ascending=False, inplace=True)
-
-  #fig9, ax9 = plt.subplots(figsize=(8, 6))
-  #feat_importances.plot(kind='bar', ax = ax9)
- # ax9.set_title('Importance des caractéristiques')
- # ax9.set_xlabel('Caractéristiques')
- # ax9.set_ylabel('Importance')
-
- # st.pyplot(fig9)  
+  
+  st.image("features_imp.png", caption="Features importance pour le modèle de Random Forest")
 
 if page == pages[4] : 
   st.header("Conclusion & perspectives")

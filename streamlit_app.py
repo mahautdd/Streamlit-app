@@ -222,37 +222,41 @@ if page == pages[3] :
   st.subheader("Modélisation")
   st.write('La variable cible est une variable continue, nous sommes donc face à un problème de type REGRESSION')
   # Import des modèles entraînés et de leurs métriques
-  from joblib import load
-  loaded_model1 = load('model1.joblib')
-  loaded_Score1_train = load('Score1_train.joblib')
-  loaded_Score1_test = load('Score1_test.joblib')
-  loaded_MAE1 = load('MAE1.joblib')
+  #from joblib import load
+  #loaded_model1 = load('model1.joblib')
+  #loaded_Score1_train = load('Score1_train.joblib')
+  #loaded_Score1_test = load('Score1_test.joblib')
+  #loaded_MAE1 = load('MAE1.joblib')
   #loaded_model2 = load('model2.joblib')
-  loaded_MAE2 = load('MAE2.joblib')
-  loaded_model2bis = load('model2bis.joblib')
-  loaded_MAE2bis = load('MAE2bis.joblib')
-  l#oaded_model3 = load('model3.joblib')
-  loaded_MAE3 = load('MAE3.joblib')
+  #loaded_MAE2 = load('MAE2.joblib')
+  #loaded_model2bis = load('model2bis.joblib')
+  #loaded_MAE2bis = load('MAE2bis.joblib')
+  #loaded_model3 = load('model3.joblib')
+  #loaded_MAE3 = load('MAE3.joblib')
   #loaded_X_train = load('X_train.joblib')
 
   # Création d'une fonction qui renvoie la ou les métrique(s)
-  def Metriques(option):
-    if option == 'Regression linéaire':
-      return loaded_Score1_train, loaded_Score1_test, loaded_MAE1
-    elif option == 'Arbre de regression':
-      return loaded_MAE2
-    elif option == 'Arbre de regression après Grid Search':
-      return loaded_MAE2bis
-    elif option == 'Random Forest':
-      return loaded_MAE3
+  #def Metriques(option):
+  #  if option == 'Regression linéaire':
+  #    return loaded_Score1_train, loaded_Score1_test, loaded_MAE1
+  #  elif option == 'Arbre de regression':
+  #    return loaded_MAE2
+  #  elif option == 'Arbre de regression après Grid Search':
+  #    return loaded_MAE2bis
+  #  elif option == 'Random Forest':
+  #    return loaded_MAE3
 
   # Création selectbox
   choix = ['Regression linéaire', 'Arbre de regression', 'Arbre de regression après Grid Search', 'Random Forest']
   option = st.selectbox('Choix du modèle', choix)
   if option == 'Regression linéaire':
-    st.write('Score train, score test et MAE : ',Metriques(option))
+    st.write('Score train 0.16, score test 0.15 et MAE 60.')
+    if option == 'Arbre de regression' :
+        st.write('La MAE est 15.')
+        if option == 'Arbre de regression après Grid Search':
+            st.write('La MAE est 14.6.')
   else:
-    st.write('MAE : ',Metriques(option))
+    st.write('La MAE est 11.59')
 
   st.markdown(''':blue[Choix des métriques ] ''')
   st.write("Score ou coefficient de détermination : pertinent dans le cas de la régression linéaire")
@@ -270,8 +274,9 @@ if page == pages[3] :
   st.markdown(''':blue[Random Forest]''')
   st.write('Meilleure précision')
 
-  #st.subheader("Caractéristiques principales")
+  st.subheader("Caractéristiques principales")
 
+st.image("features_imp.png", caption="Features importance pour le modèle de Random Forest")
   #Importance des variable pour le modèle de Random Forest retenu
   #import matplotlib.pyplot as plt
   #import pandas as pd

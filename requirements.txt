@@ -5,5 +5,5 @@ matplotlib
 seaborn
 plotly
 gdown
-joblib
+joblib==1.1.0
 scikit-learn

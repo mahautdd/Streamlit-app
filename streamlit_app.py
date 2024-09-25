@@ -250,10 +250,10 @@ if page == pages[3] :
   option = st.selectbox('Choix du modèle', choix)
   if option == 'Regression linéaire':
     st.write('Score train 0.16, score test 0.15 et MAE 60.')
-    elif option == 'Arbre de regression' :
-        st.write('La MAE est 15.')
-        elif option == 'Arbre de regression après Grid Search':
-            st.write('La MAE est 14.6.')
+  elif option == 'Arbre de regression' :
+    st.write('La MAE est 15.')
+  elif option == 'Arbre de regression après Grid Search':
+    st.write('La MAE est 14.6.')
   else:
     st.write("La MAE est 11.59. Il s'agit du meilleur modèle !")
 

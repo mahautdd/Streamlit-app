@@ -250,9 +250,9 @@ if page == pages[3] :
   option = st.selectbox('Choix du modèle', choix)
   if option == 'Regression linéaire':
     st.write('Score train 0.16, score test 0.15 et MAE 60.')
-    if option == 'Arbre de regression' :
+    elif option == 'Arbre de regression' :
         st.write('La MAE est 15.')
-        if option == 'Arbre de regression après Grid Search':
+        elif option == 'Arbre de regression après Grid Search':
             st.write('La MAE est 14.6.')
   else:
     st.write("La MAE est 11.59. Il s'agit du meilleur modèle !")
@@ -267,7 +267,7 @@ if page == pages[3] :
 
   st.subheader("Analyse du meilleur modèle")
   st.markdown(''':blue[Régression linéaire ]''')
-  st.write('Modèle simple mais performances limitées. Erreur absolue moyenne élevée, incapable de capturer variations complexes du trafic cycliste à Paris.')
+  st.write('Modèle simple mais performances limitées. Erreur absolue moyenne élevée, incapable de capturer les variations complexes du trafic cycliste à Paris.')
   st.markdown(''':blue[Arbre de regression]''')
   st.write('Amélioration significative par rapport à la régression linéaire grâce à la capture des relations non linéaires.')
   st.markdown(''':blue[Random Forest]''')

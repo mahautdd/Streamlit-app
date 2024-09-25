@@ -6,13 +6,25 @@ import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import gdown
 
-url = 'https://drive.google.com/uc?export=download&id=11a22bhGoroqqg3ItPVlBfWzcvBGwpWsd'
+file_id = '11a22bhGoroqqg3ItPVlBfWzcvBGwpWsd'
+url = f'https://drive.google.com/uc?id={file_id}'
+
+# Télécharger le fichier CSV dans un DataFrame pandas
+@st.cache_data
+def load_data():
+    gdown.download(url, 'temp_data.csv', quiet=True)
+    return pd.read_csv('temp_data.csv')
+
+df = load_data()
+
+#url = 'https://drive.google.com/uc?export=download&id=11a22bhGoroqqg3ItPVlBfWzcvBGwpWsd'
 url2 = 'https://drive.google.com/uc?export=download&id=1JV1ynOg0ek-bHJUo8tn7lbCrlwzprhk2'
 url3 = 'https://drive.google.com/uc?export=download&id=1OUxAXN2pXLvKbv72idauAgNHmwl3_-YY'
 
 #Mise en place données utiles
-df=pd.read_csv(url)
+#df=pd.read_csv(url)
 df_prep=pd.read_csv(url2)
 df_prep2 = pd.read_csv(url3)
 

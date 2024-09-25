@@ -227,13 +227,13 @@ if page == pages[3] :
   loaded_Score1_train = load('Score1_train.joblib')
   loaded_Score1_test = load('Score1_test.joblib')
   loaded_MAE1 = load('MAE1.joblib')
-  loaded_model2 = load('model2.joblib')
+  #loaded_model2 = load('model2.joblib')
   loaded_MAE2 = load('MAE2.joblib')
   loaded_model2bis = load('model2bis.joblib')
   loaded_MAE2bis = load('MAE2bis.joblib')
-  loaded_model3 = load('model3.joblib')
+  l#oaded_model3 = load('model3.joblib')
   loaded_MAE3 = load('MAE3.joblib')
-  loaded_X_train = load('X_train.joblib')
+  #loaded_X_train = load('X_train.joblib')
 
   # Création d'une fonction qui renvoie la ou les métrique(s)
   def Metriques(option):
@@ -270,22 +270,22 @@ if page == pages[3] :
   st.markdown(''':blue[Random Forest]''')
   st.write('Meilleure précision')
 
-  st.subheader("Caractéristiques principales")
+  #st.subheader("Caractéristiques principales")
 
   #Importance des variable pour le modèle de Random Forest retenu
-  import matplotlib.pyplot as plt
-  import pandas as pd
-  feats = loaded_X_train
-  feat_importances = pd.DataFrame(loaded_model3.feature_importances_, index=feats.columns, columns=["Importance"])
-  feat_importances.sort_values(by='Importance', ascending=False, inplace=True)
+  #import matplotlib.pyplot as plt
+  #import pandas as pd
+ # feats = loaded_X_train
+ # feat_importances = pd.DataFrame(loaded_model3.feature_importances_, index=feats.columns, columns=["Importance"])
+  #feat_importances.sort_values(by='Importance', ascending=False, inplace=True)
 
-  fig9, ax9 = plt.subplots(figsize=(8, 6))
-  feat_importances.plot(kind='bar', ax = ax9)
-  ax9.set_title('Importance des caractéristiques')
-  ax9.set_xlabel('Caractéristiques')
-  ax9.set_ylabel('Importance')
+  #fig9, ax9 = plt.subplots(figsize=(8, 6))
+  #feat_importances.plot(kind='bar', ax = ax9)
+ # ax9.set_title('Importance des caractéristiques')
+ # ax9.set_xlabel('Caractéristiques')
+ # ax9.set_ylabel('Importance')
 
-  st.pyplot(fig9)  
+ # st.pyplot(fig9)  
 
 if page == pages[4] : 
   st.header("Conclusion & perspectives")

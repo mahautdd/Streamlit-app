@@ -255,7 +255,7 @@ if page == pages[3] :
         if option == 'Arbre de regression après Grid Search':
             st.write('La MAE est 14.6.')
   else:
-    st.write('La MAE est 11.59. Il s'agit du meilleur modèle !')
+    st.write("La MAE est 11.59. Il s'agit du meilleur modèle !")
 
   st.markdown(''':blue[Choix des métriques ] ''')
   st.write("Score ou coefficient de détermination : pertinent dans le cas de la régression linéaire")

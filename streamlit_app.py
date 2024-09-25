@@ -61,7 +61,7 @@ page=st.sidebar.radio("Aller vers", pages)
 if page == pages[0] : 
   st.header("Introduction")
   st.subheader("Contexte et présentation des jeux de données")
-  st.write("Nous sommes un groupe de 4 étudiants du cursus Data Analyst de Data Scientest. Nous avons choisi de travailler sur le thème du trafic de vélos à Paris, pour diverses diverses raisons professionnelles et personnelles (intérêt pour une approche logistique, sensibilité au développement de cette mobilité douce...).")
+  st.write("Nous sommes un groupe de 4 étudiants du cursus Data Analyst de Data Scientest. Nous avons choisi de travailler sur le thème du trafic de vélos à Paris, pour diverses raisons professionnelles et personnelles (intérêt pour une approche logistique, sensibilité au développement de cette mobilité douce...).")
 
   st.subheader("Objectifs du projet")
   st.markdown("""

@@ -6,3 +6,4 @@ seaborn
 plotly
 gdown
 joblib
+scikit-learn
